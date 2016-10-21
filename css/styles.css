@@ -1,0 +1,14 @@
+body{
+	background-color: #F5F5F5;
+	margin: 40px auto;
+}
+.wrapper{
+	margin: auto;
+  width: 50%;
+  border: 2px dotted grey;
+  padding: 30px;
+  padding-left: 30px;
+  padding-right: 30px;
+  border-radius: 15px;
+  background-color: white;
+}
