@@ -1,6 +1,7 @@
 body{
 	background-color: #F5F5F5;
 	margin: 40px auto;
+  font-family: 'Raleway', sans-serif;
 }
 .wrapper{
 	margin: auto;
@@ -11,4 +12,7 @@ body{
   padding-right: 30px;
   border-radius: 15px;
   background-color: white;
+}
+h1, h3{
+  font-family: 'Raleway', sans-serif;
 }
