@@ -16,3 +16,19 @@ body{
 h1, h3{
   font-family: 'Raleway', sans-serif;
 }
+ul{
+  list-style-type: none;
+}
+a{
+  text-decoration: none;
+}
+a:link{
+  color:  #778899;
+}
+a:visited{
+  color: Purple;
+}
+a:hover{
+  background-color: #F5F5F5;
+  color: #000000;
+}
