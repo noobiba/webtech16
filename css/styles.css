@@ -12,6 +12,11 @@ body{
 }
 header{
   text-align: center;
+  color: #FF5F00;
+  background-color: #AFAFAF;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 15px;
 }
 .header{
 }
@@ -60,13 +65,25 @@ a:hover{
   color: #000000;
 }
 table{
-  width: 90%;
+  width: 100%;
 } 
-th, td{
+table.uebersicht{
+  text-align: left;
+}
+.uebersicht td{
   text-align: justify;
   border-bottom: 1px dotted grey;
+  border-collapse: collapse;
   padding: 8px 0 8px 0;
   vertical-align: middle;
+}
+table.namen{
+  color: black;  
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+td.namen{
+  color: #FF5F00;
 }
 footer{
   padding-top: 30px;
