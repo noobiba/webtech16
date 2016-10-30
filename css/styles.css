@@ -55,6 +55,23 @@ ul.navmain li a{
   font-weight: bold;
   text-decoration: none;
 }
+ul.navmain li a:hover,
+ul.navmain li a:focus{
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: #AFAFAF;
+  color: #FF5F00;
+  font-weight: bold;
+  text-decoration: none;
+}
+ul.navmain li a:active{
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: #AFAFAF;
+  color: #FF5F00;
+  font-weight: bold;
+  text-decoration: none;
+}
 li{
   text-align: justify;
 }
