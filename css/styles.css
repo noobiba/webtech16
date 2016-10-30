@@ -19,7 +19,13 @@ header{
   border-radius: 15px;
 }
 .logo{
-  text-align: center;
+  margin: 15px auto;
+  padding: 5px 5px 5px 5px ;
+  background-color: white;
+  border: 1px solid #FF5F00;
+  border-radius: 10px;
+  width: 63px;
+  height: 48px;
 }
 section{
   margin: auto;
