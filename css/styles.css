@@ -29,6 +29,9 @@ section{
 nav{
   padding: 50px 0px;
 }
+nav a{
+  padding: 10px;
+}
 ul{
   list-style-type: none;
   list-style-position: inside;
@@ -43,6 +46,14 @@ ul.navmain li{
   display: inline;
   padding: 5px 20px;
   border: 2px;
+}
+ul.navmain li a{
+  border: 2px solid grey;
+  border-radius: 10px;
+  background-color: #0082D1;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
 }
 li{
   text-align: justify;
