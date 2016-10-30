@@ -95,6 +95,9 @@ table.teilnehmer td{
   margin: 0px;
   border: 1px solid black;
 }
+.shadow{
+    box-shadow: 5px 5px 10px grey;
+}
 
 footer{
   padding-top: 30px;
