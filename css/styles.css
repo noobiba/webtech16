@@ -1,7 +1,7 @@
 body{
 	background-color: #F5F5F5;
 	margin: 60px;
-  font-family: 'Raleway', sans-serif;
+  font-family: Verdana, sans-serif;
 }
 .wrapper{
 	margin: auto;
@@ -37,12 +37,13 @@ ul{
 ul.navmain li{
   display: inline;
   padding: 5px 20px;
+  border: 2px;
 }
 li{
   text-align: justify;
 }
 h1, h3{
-  font-family: 'Raleway', sans-serif;
+  font-family: Verdana, sans-serif;
   text-align: center;
 }
 a{
