@@ -1,54 +1,131 @@
 body {
   background-color: #FF5F00; /* HTW-orange */ 
   font-size:1rem;
-  margin: 0px;
+  margin: 20px;
 }
+
+#oben{
+  background: #3333ff;
+  color: white;
+  padding: 10px 20px;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.flex-item{
+}
+
+.item1{
+  flex: 1;
+  flex-grow: 1;
+}
+
+.item2{
+  flex: 4;
+  flex-grow: 1;
+}
+
+.item3{
+  flex: 2;
+  flex-grow: 1;
+}
+
+#links{
+  background: #b3b3ff;
+  color: white;
+  padding: 10px 20px;
+}
+
+#mitte{
+  background: #0000e6;
+  color: white;
+  padding: 10px 20px;
+}
+
+#rechts{
+  background: #00004d;
+  color: white;
+  padding: 10px 20px;
+}
+
+#unten{
+  background: #ccccff;
+  color: black;
+  margin-top: 20px;
+  padding: 10px 20px;
+}   
+
+/* Wenn Webseite GRÖßER als 480px
+  gelten diese Angaben: */
+
 @media screen and (min-width: 480px) { 
   body {
     background-color: #0082D1; /* HTW-blau */
-    font-size:1.2rem; }
-  }
-   #oben{
-    background: #d6f5d6;
-  }
-  .flex-container{
-    display: flex;
-    flex-direction: row;
-  }
-  .flex-item{
-  }
-  .item1{
-    flex: 1;
-    flex-grow: 1;
-  }
-  .item2{
-    flex: 4;
-    flex-grow: 1;
-  }
-  .item3{
-    flex: 2;
-    flex-grow: 1;
-  }
-
-  #links{
-    background: #71db70;
-    color: white;
-  }
-  
-  #mitte{
-    background: #145214;
-    color: white;
-  }
-  #rechts{
-    background: #238f25;
+    font-size:1.2rem;
     color: white;
   }
 
-  #unten{
-    background: #d6f5d6;
-    margin: 0px;
-    padding: 0px;
-  } 
-  .clearing{
-    clear: both;
-  }
+ #oben{
+  background: #d6f5d6;
+  color: black;
+  padding: 10px 20px;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-item{
+}
+
+.item1{
+  flex: 1;
+  flex-grow: 1;
+}
+
+.item2{
+  flex: 4;
+  flex-grow: 1;
+}
+
+.item3{
+  flex: 2;
+  flex-grow: 1;
+}
+
+#links{
+  background: #71db70;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+#mitte{
+  background: #145214;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+#rechts{
+  background: #238f25;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+}
+
+#unten{
+  background: #d6f5d6;
+  color: black;
+  margin-top: 20px;
+  padding: 10px 20px;
+} 
+
+.clearing{
+  clear: both;
+}
