@@ -1,5 +1,7 @@
 body {
-background-color: #FF5F00; /* HTW-orange */ font-size:1rem;
+  background-color: #FF5F00; /* HTW-orange */ 
+  font-size:1rem;
+  margin: 0px;
 }
 @media screen and (min-width: 480px) { 
   body {
@@ -8,26 +10,24 @@ background-color: #FF5F00; /* HTW-orange */ font-size:1rem;
   }
    #oben{
     background: #d6f5d6;
-    margin: 20px;
-    padding: 0 10px;
   }
   .flex-container{
     display: flex;
-    margin: 20px;
-    flex-direction: row; 
-    justify-content: space-around;
+    flex-direction: row;
   }
   .flex-item{
- 
   }
   .item1{
     flex: 1;
+    flex-grow: 1;
   }
   .item2{
     flex: 4;
+    flex-grow: 1;
   }
   .item3{
     flex: 2;
+    flex-grow: 1;
   }
 
   #links{
@@ -43,8 +43,12 @@ background-color: #FF5F00; /* HTW-orange */ font-size:1rem;
     background: #238f25;
     color: white;
   }
+
   #unten{
     background: #d6f5d6;
-    margin: 20px;
-    padding: 0 10px;
+    margin: 0px;
+    padding: 0px;
   } 
+  .clearing{
+    clear: both;
+  }
