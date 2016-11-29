@@ -34,7 +34,13 @@ if (! $file) {
 	 * feof - end of file
 	 * prüft, ob ein Dateizeiger am Ende der Datei steht
 	 */
-	while ( ! feof ( $file ) ) {
+
+	echo "<div class='well'>
+					<ul class='list-group'
+					<li class='list-group-item'>";
+
+
+while ( ! feof ( $file ) ) {
 		/*
 		 * fegts() liest eine Zeile einer Datei aus
 		 * fgets() gibt einen String zürück
@@ -47,6 +53,10 @@ if (! $file) {
 	}
 	fclose ( $file );
 }
+
+	echo "</li>
+			</ul>";
+
 ?>
 </body>
 </html>
