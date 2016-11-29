@@ -7,6 +7,7 @@
 <body>
 	<h1>Datei einlesen</h1>
 <?php
+
 /*
  * falls das Zeilenende der einzulesenden Datei nicht korrekt 
  * erkannt werden sollte, dann sollte die folgende Anweisung 
@@ -38,7 +39,7 @@ if (! $file) {
 		 * in der nächsten Zeile (außer, es wurde eine 
 		 * Leselänge als 2. Parameter fgets übergeben)
 		 */
-		$current_line = fgets ( $file );
+	$current_line = fgets ( $file );
 		echo $current_line . "<br/>";
 	}
 	fclose ( $file );
