@@ -55,7 +55,8 @@ while ( ! feof ( $file ) ) {
 }
 
 	echo "</li>
-			</ul>";
+			</ul>
+		</div>";
 
 ?>
 </body>
