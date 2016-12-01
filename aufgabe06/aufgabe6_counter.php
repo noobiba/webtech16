@@ -37,7 +37,8 @@ if (! $file) {
 	
 		echo "<div class='well'>";
 		echo "<ul class='list-group'>";
-				
+		
+		$show_max=0;	
 
 		while ( ! feof ( $file ) ) {
 		/*
@@ -48,29 +49,30 @@ if (! $file) {
 		 * Leselänge als 2. Parameter fgets übergeben)
 		 */
 
-		$show_max=10;
-
-		for ($i=1; $i<=$show_max; $i++) { 
-
 			$vorname = fgets($file);
 			$nachname = fgets($file);
 			$email = fgets($file);
 			$ipnr = fgets($file);
 			$leer = fgets($file);
-
-			echo "<li class='list-group-item'>";
-			echo $vorname, $nachname . "<a href='mailto:$email'>" . $email . "</a>";
-			echo "</li>";
-		}
-		echo "</ul>";
-		echo "</div>";
-		echo "<div class='well'>";
-		echo "<ul class='list-group'>";
-		
-		$i++;
-		}
 			
+			echo "<li class='list-group-item'>";
+			echo $vorname . $nachname . "<a href='mailto:$email'>" . $email . "</a>";
+			echo "</li>";
+
+			$show_max++;			
+
+			if ($show_max==10) {
+				$show_max=0;
+
+				echo "</ul>";
+				echo "</div>";
+
+				echo "<div class='well'>";
+				echo "<ul class='list-group'>";
+			}
+		}		
 	fclose ( $file );
+
 }
 ?>
 </body>

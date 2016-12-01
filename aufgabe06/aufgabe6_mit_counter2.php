@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-	<link rel="stylesheet" href="../css/bootstrap.css" >
-	<title>Datei einlesen</title>
+<link href="../css/bootstrap.min.css" rel="stylesheet">
+<meta charset="UTF-8">
+<title>Datei einlesen</title>
 </head>
 <body>
 	<h1>Datei einlesen</h1>
-	<?php
-
+<?php
 /*
  * falls das Zeilenende der einzulesenden Datei nicht korrekt 
  * erkannt werden sollte, dann sollte die folgende Anweisung 
@@ -34,12 +31,9 @@ if (! $file) {
 	 * feof - end of file
 	 * prüft, ob ein Dateizeiger am Ende der Datei steht
 	 */
-	
-		echo "<div class='well'>";
-		echo "<ul class='list-group'>";
-				
-
-		while ( ! feof ( $file ) ) {
+	echo '<div class = "well"><ul class = "list-group">';
+	$counter=0;
+	while ( ! feof ( $file ) ) {
 		/*
 		 * fegts() liest eine Zeile einer Datei aus
 		 * fgets() gibt einen String zürück
@@ -47,29 +41,22 @@ if (! $file) {
 		 * in der nächsten Zeile (außer, es wurde eine 
 		 * Leselänge als 2. Parameter fgets übergeben)
 		 */
-
-		$show_max=10;
-
-		for ($i=1; $i<=$show_max; $i++) { 
-
 			$vorname = fgets($file);
 			$nachname = fgets($file);
 			$email = fgets($file);
 			$ipnr = fgets($file);
 			$leer = fgets($file);
-
-			echo "<li class='list-group-item'>";
-			echo $vorname, $nachname . "<a href='mailto:$email'>" . $email . "</a>";
-			echo "</li>";
-		}
-		echo "</ul>";
-		echo "</div>";
-		echo "<div class='well'>";
-		echo "<ul class='list-group'>";
+			echo "<li class = 'list-group-item'>".$vorname.$nachname."<a href='mailto:'.$email.'>".$email."</a></li>";	
+			$counter++;
+			if ($counter==10)
+			{
+				$counter=0;
+				echo "</ul></div>";
+				echo '<div class = "well"><ul class = "list-group">';
+			}
 		
-		$i++;
-		}
-			
+		
+	}
 	fclose ( $file );
 }
 ?>
