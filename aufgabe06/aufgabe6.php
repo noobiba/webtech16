@@ -8,7 +8,7 @@
 	<title>Datei einlesen</title>
 </head>
 <body>
-	<h1>Datei einlesen</h1>
+	
 	<?php
 
 /*
@@ -34,8 +34,20 @@ if (! $file) {
 	 * feof - end of file
 	 * prüft, ob ein Dateizeiger am Ende der Datei steht
 	 */
-	
-		echo "<div class='well'>";
+
+
+		echo "<div class='container'>";
+		
+		echo "<div class='row'>";
+		echo "<div class='col-sm-4'></div>";
+		echo "<div class='col-sm-4'><h1>Datei einlesen</h1></div>";
+		echo "<div class='col-sm-4'></div>";
+		echo "</div>";
+
+		echo "<div class='row'>";
+		echo "<div class='col-sm-4'></div>";
+
+		echo "<div class='well col-sm-4'>";
 		echo "<ul class='list-group'>";
 				
 
@@ -59,13 +71,21 @@ if (! $file) {
 			$leer = fgets($file);
 
 			echo "<li class='list-group-item'>";
-			echo $vorname, $nachname . "<a href='mailto:$email'>" . $email . "</a>";
+			echo $vorname . $nachname . "<a href='mailto:$email'>" . $email . "</a>";
 			echo "</li>";
 		}
 		echo "</ul>";
 		echo "</div>";
-		echo "<div class='well'>";
+
+		echo "<div class='col-sm-4'></div>";
+		echo "</div>";
+		
+		
+		echo "<div class='row'>";
+		echo "<div class='col-sm-4'></div>";
+		echo "<div class='well col-sm-4'>";
 		echo "<ul class='list-group'>";
+				
 		
 		$i++;
 		}
