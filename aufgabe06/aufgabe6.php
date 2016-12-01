@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-<link href="../css/bootstrap.css" rel="stylesheet">
-<title>Datei einlesen</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+	<link rel="stylesheet" href="../css/bootstrap.css" >
+	<title>Datei einlesen</title>
 </head>
 <body>
 	<h1>Datei einlesen</h1>
-<?php
+	<?php
 
 /*
  * falls das Zeilenende der einzulesenden Datei nicht korrekt 
@@ -34,13 +34,15 @@ if (! $file) {
 	 * feof - end of file
 	 * prüft, ob ein Dateizeiger am Ende der Datei steht
 	 */
+	
 
-	echo "<div class='well'>
-					<ul class='list-group'
-					<li class='list-group-item'>";
-
-
-while ( ! feof ( $file ) ) {
+		$vorname = fgets($file);
+		$nachname = fgets($file);
+		$email = fgets($file);
+		$ipnr = fgets($file);
+		$leer = fgets($file);
+		
+		while ( ! feof ( $file ) ) {
 		/*
 		 * fegts() liest eine Zeile einer Datei aus
 		 * fgets() gibt einen String zürück
@@ -48,16 +50,26 @@ while ( ! feof ( $file ) ) {
 		 * in der nächsten Zeile (außer, es wurde eine 
 		 * Leselänge als 2. Parameter fgets übergeben)
 		 */
-	$current_line = fgets ( $file );
-		echo $current_line . "<br/>";
+		
+		echo "<div class='well'>";
+		echo "<ul class='list-group'>";
+		echo "<li class='list-group-item'>";
+		echo $vorname, $nachname, $email;
+
+		$show_max=10;
+
+		if ($show_max=10){
+			$show_max=0;
+
+			echo "</li>";
+			echo "</ul>";
+			echo "</div>";
+		}
+		$show_max++;
 	}
+
 	fclose ( $file );
 }
-
-	echo "</li>
-			</ul>
-		</div>";
-
 ?>
 </body>
 </html>
