@@ -35,13 +35,9 @@ if (! $file) {
 	 * prüft, ob ein Dateizeiger am Ende der Datei steht
 	 */
 	
-
-		$vorname = fgets($file);
-		$nachname = fgets($file);
-		$email = fgets($file);
-		$ipnr = fgets($file);
-		$leer = fgets($file);
-		
+		echo "<div class='well'>";
+		echo "<ul class='list-group'>";
+				
 		while ( ! feof ( $file ) ) {
 		/*
 		 * fegts() liest eine Zeile einer Datei aus
@@ -50,24 +46,30 @@ if (! $file) {
 		 * in der nächsten Zeile (außer, es wurde eine 
 		 * Leselänge als 2. Parameter fgets übergeben)
 		 */
-		
-		echo "<div class='well'>";
-		echo "<ul class='list-group'>";
-		echo "<li class='list-group-item'>";
-		echo $vorname, $nachname, $email;
 
 		$show_max=10;
 
-		if ($show_max=10){
-			$show_max=0;
+		for ($i=1; $i<=$show_max; $i++) { 
 
+			$vorname = fgets($file);
+			$nachname = fgets($file);
+			$email = fgets($file);
+			$ipnr = fgets($file);
+			$leer = fgets($file);
+
+			echo "<li class='list-group-item'>";
+			echo $vorname, $nachname . "<a href='mailto:$email'>" . $email . "</a>";
 			echo "</li>";
-			echo "</ul>";
-			echo "</div>";
 		}
-		$show_max++;
-	}
-
+		echo "</ul>";
+		echo "</div>";
+		echo "<div class='well'>";
+		echo "<ul class='list-group'>";
+		
+		$i++;
+		}
+		
+	
 	fclose ( $file );
 }
 ?>
