@@ -80,7 +80,6 @@ if (! $file) {
 		echo "<div class='col-sm-4'></div>";
 		echo "</div>";
 		
-		
 		echo "<div class='row'>";
 		echo "<div class='col-sm-4'></div>";
 		echo "<div class='well col-sm-4'>";
