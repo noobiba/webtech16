@@ -24,9 +24,14 @@
 
 		
 	echo "<div class='jumbotron'>";
-	echo "<div><h5>Vielen Dank für Ihre Anmeldung.</h5><h6>Sie werden in K&uuml;rze Nachricht von uns erhalten.</h6>";
+	echo "<div><h5>Vielen Dank für Ihre Anmeldung!</h5>";
+	echo "<div><h6>Herzlichen Dank <em>" . $vorname . " " . $nachname . " </em>aus dem Studiengang<em> " . $studiengang . "</em>!<br/> ";
+	echo "Wir haben eine Best&auml;tigung Ihrer Anmeldung an die Email-Adresse<em> " . $email . " </em>versendet.</h6><br/>";
+	echo "</div>";
+	echo "<a href='#' target='_self' class='a'>Zur&uuml;ck</a>";
 	echo "</div>";
 	echo "</div>";
+
 
 	echo "<div class='container'";
 	echo "<div class='row'";
