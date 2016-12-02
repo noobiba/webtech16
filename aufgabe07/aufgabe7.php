@@ -25,8 +25,10 @@
 	echo "Sie haben als Passwort: " . $pwd . "angegeben";
 	echo "Sie haben Submit: " . $submit . "gewählt.";
 
+	echo "<div class='container'>";
 	echo "<div class='jumbotron'>";
-	echo "Vielen Dank für Ihre Anmeldung. Wir werden uns in K&uuml;rze bei Ihnen melden.";
+	echo "<div><h2>Vielen Dank für Ihre Anmeldung.</h2><h5>Sie werden in K&uuml;rze Nachricht von uns erhalten.</h5>";
+	echo "</div>";
 	echo "</div>";
 
 ?>
