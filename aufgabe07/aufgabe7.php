@@ -11,12 +11,43 @@
 <body>
 
 <?php 
-	$vorname = $_POST["vorname"];
-	$nachname = $_POST["nachname"];
-	$email = $_POST["email"];
-	$studiengang = $_POST["studiengang"];
-	$passwort = $_POST["pwd"];
-	$submit = $_POST["submit"];
+	$vorname = filter_var($_POST['vorname'], FILTER_SANITIZE_STRING);
+	$nachname = filter_var($_POST['nachname'], FILTER_SANITIZE_STRING);
+	$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+	$studiengang = filter_var($_POST['studiengang'], FILTER_SANITIZE_STRING);
+	$passwort = filter_var($_POST["pwd"], FILTER_SANITIZE_STRING);
+	
+
+	// Fehlervariablen
+
+	$fehlerausgabe = " ";
+
+	$f_vorname = false;
+	$f_nachname = false;
+	$f_email = false;
+	$f_paswort = false;
+
+
+	if(!$vorname){
+		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Der Vorname fehlt.</li>';
+		$f_vorname = true;
+	}
+
+	if(!$nachname){
+		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Der Nachname fehlt.</li>';
+		$f_nachname = true;
+	} 
+
+	if(!$email){
+		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Die Email fehlt.</li>';
+		$f_nachname = true;
+	}  
+
+	if(!$passwort){
+		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Das Passwort fehlt.</li>';
+		$f_nachname = true;
+	}   
+
 
 
 	echo "<div class='container'><h2>Anmeldung</h2>";
@@ -26,7 +57,8 @@
 	echo "<div><h6>Herzlichen Dank <em>" . $vorname . " " . $nachname . " </em>aus dem Studiengang<em> " . $studiengang . "</em>!<br/> ";
 	echo "Wir haben eine Best&auml;tigung Ihrer Anmeldung an die Email-Adresse<em> " . $email . " </em>versendet.</h6><br/>";
 	echo "</div>";
-	echo "<a href='#' target='_self' class='a'>Zur&uuml;ck</a>";
+	echo "<a href='" .htmlspecialchars($_SERVER["PHP_SELF"]). "' class='a'>Zur&uuml;ck</a>";
+	
 	echo "</div>";
 	echo "</div>";
 
@@ -34,7 +66,10 @@
 	echo "<div class='container'";
 	echo "<div class='row'";
 
-	if(isset($_POST["vorname"])){ /* Im true Zweig noch das input feld ändern.*/
+
+
+
+	if(isset($_POST["vorname"])){ 
 		echo "Sie haben als Vornamen: " . $vorname . " eingegeben.";
 		echo "<input type='text' class='form-control' name='vorname'
 					placeholder='Vorname'><i class='glyphicon glyphicon-ok form-control-feedback'></i>";
@@ -61,11 +96,7 @@
 		echo "Bitte geben Sie Ihr Passwort an.";
 	}
 
-	if(isset($_POST["submit"])){
-		echo "Sie haben Submit gedrückt.";
-	}else{
-		echo "Bitte schicken Sie das Formular ab.";
-	}
+	
 	echo "</div>";
 	echo "</div>";
 
