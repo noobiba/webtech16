@@ -14,7 +14,18 @@
     <a href="../index.html">Home</a>
 
     <div id="demo" style="width:200px; height:200px; background-color:red;"
-    onclick="document.getElementById('demo').style.backgroundColor = 'green'">Hallo</div>
+    onclick="document.getElementById('demo').style.backgroundColor = 'green'"
+    ondblclick="document.getElementById('demo').style.lineHeight='200px'
+                document.getElementById('demo').innerHTML='Doppelklick'
+                document.getElementById('demo').style.textAlign='center'">
+    </div>
+
+
+
+   
+
+
+
 
 
     <?php
