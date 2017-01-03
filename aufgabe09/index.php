@@ -13,11 +13,17 @@
     <h1>Mausereignisse behandeln mit JavaScript</h1>
     <a href="../index.html">Home</a>
 
+    <div id="demo" style="width:200px; height:200px; background-color:red;">Hallo</div>
+
+
+    <script>
+      document.getElementById("demo").style.color = "blue";
+    </script>
+
     <?php
-
     echo "ich bin die 9.Aufgabe.";
-
     ?>
+
   </div>
 </body>
 </html>
