@@ -11,27 +11,18 @@
   <div class="wrapper">
     <h1>Aufgabe 9</h1>
     <h1>Mausereignisse behandeln mit JavaScript</h1>
-    <a href="../index.html">Home</a>
+    
+    <div><a href="../index.html">Home</a></div>
 
     <div id="demo" style="width:200px; height:200px; background-color:red;"
     onclick="document.getElementById('demo').style.backgroundColor = 'green'"
     ondblclick="document.getElementById('demo').style.lineHeight='200px'
                 document.getElementById('demo').innerHTML='Doppelklick'
-                document.getElementById('demo').style.textAlign='center'">
-    </div>
+                document.getElementById('demo').style.textAlign='center'"></div>
 
 
 
    
-
-
-
-
-
-    <?php
-    echo "ich bin die 9.Aufgabe.";
-    ?>
-
-  </div>
+</div>
 </body>
 </html>
