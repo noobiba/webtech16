@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <title>Aufgabe 7</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link href="../css/bootstrap.css" type="text/css" rel="stylesheet" />  -->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 </head>
 
@@ -23,6 +22,7 @@
 	$fehlerausgabe = " ";
 
 	$f_vorname = false;
+
 	$f_nachname = false;
 	$f_email = false;
 	$f_paswort = false;

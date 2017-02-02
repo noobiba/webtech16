@@ -1,0 +1,35 @@
+body{
+	font-family: Verdana, sans-serif;
+}
+
+header, 
+footer{
+	background: #D3D3D3;
+	text-align: center;
+	padding: 2px;
+}
+
+a,
+a:link,
+a:visited,
+a:hover,
+a:active,
+a:focus{
+	color: black;
+	text-decoration: none;
+}
+
+.main{
+	display: flex;
+}
+.links{
+	flex:1;
+	background: orange;
+}
+
+.rechts{
+	flex:5;
+	background: #6495ED;
+}
+
+

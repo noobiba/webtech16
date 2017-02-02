@@ -1,1 +1,46 @@
-to be finished.
+h1{
+	color: black;
+	background: #FF5F00;
+	padding: 5px;
+}
+
+th,
+td{
+	text-align: center;
+}
+
+th{
+	background: #FF5F00;
+}
+
+/* 1-stellig */
+.gelb{
+	background: #ffff00;
+}
+
+/* 2-stellig */
+.orange{
+	background: #FF5F00;
+}
+
+/* 3-stellig */
+.rosa{
+	background: #ff3399;
+}
+
+/* 4-stellig */
+.gruen{
+	background: #76B900;
+}
+
+/* 5-stellig */
+.blau{
+	background: #0082D1;
+}
+
+/* 6-stellig */
+.grau{
+	background: #AFAFAF;
+}
+
+
