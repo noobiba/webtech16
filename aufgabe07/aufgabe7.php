@@ -18,117 +18,222 @@
 	
 
 	// Fehlervariablen
-
-	$fehlerausgabe = " ";
+	$fehlerausgabe = '';
 
 	$f_vorname = false;
-
 	$f_nachname = false;
 	$f_email = false;
-	$f_paswort = false;
+	$f_passwort = false;
 
 
 	if(!$vorname){
-		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Der Vorname fehlt.</li>';
+		$fehlerausgabe = $fehlerausgabe . '<li class="list-group-item list-group-item-danger"> Bitte geben Sie Ihren Vornamen an.</li>';
 		$f_vorname = true;
 	}
 
 	if(!$nachname){
-		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Der Nachname fehlt.</li>';
+		$fehlerausgabe = $fehlerausgabe . '<li class="list-group-item list-group-item-danger"> Bitte geben Sie Ihren Nachnamen an.</li>';
 		$f_nachname = true;
 	} 
 
 	if(!$email){
-		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Die Email fehlt.</li>';
-		$f_nachname = true;
+		$fehlerausgabe = $fehlerausgabe . '<li class="list-group-item list-group-item-danger"> Bitte geben Sie Ihre Email an.</li>';
+		$email = true;
 	}  
 
+	if (!$studiengang){
+		$fehlerausgabe = $fehlerausgabe . '<li class="list-group-item list-group-item-danger">Der Studiengang fehlt.</li>';
+		$f_studiengang = true;
+	}
+
 	if(!$passwort){
-		$fehlerausgabe .= '<li class="list-group-item listr-group-item-danger"> Das Passwort fehlt.</li>';
-		$f_nachname = true;
+		$fehlerausgabe = $fehlerausgabe . '<li class="list-group-item list-group-item-danger">Bitte geben Sie Ihr Passwort ein.</li>';
+		$passwort = true;
 	}   
 
-
-
-	echo "<div class='container'><h2>Anmeldung</h2>";
-
-	echo "<div class='jumbotron'>";
-	echo "<div><h5>Vielen Dank für Ihre Anmeldung!</h5>";
-	echo "<div><h6>Herzlichen Dank <em>" . $vorname . " " . $nachname . " </em>aus dem Studiengang<em> " . $studiengang . "</em>!<br/> ";
-	echo "Wir haben eine Best&auml;tigung Ihrer Anmeldung an die Email-Adresse<em> " . $email . " </em>versendet.</h6><br/>";
-	echo "</div>";
-	echo "<a href='" .htmlspecialchars($_SERVER["PHP_SELF"]). "' class='a'>Zur&uuml;ck</a>";
-	
-	echo "</div>";
-	echo "</div>";
-
-
-	echo "<div class='container'";
-	echo "<div class='row'";
-
-
-
-
-	if(isset($_POST["vorname"])){ 
-		echo "Sie haben als Vornamen: " . $vorname . " eingegeben.";
-		echo "<input type='text' class='form-control' name='vorname'
-					placeholder='Vorname'><i class='glyphicon glyphicon-ok form-control-feedback'></i>";
-	}else{
-		echo "Bitte geben Sie Ihren Vornamen ein.";
-
-	}
-
-	if(isset($_POST["nachname"])){
-		echo "Sie haben als Nachnamen: " . $nachname . " eingegeben.";
-	}else{
-		echo "Bitte geben Sie Ihren Nachnamen ein.";
-	}
-
-	if(isset($_POST["studiengang"])){
-		echo "Sie haben den Studiengang: " . $studiengang . " gewählt.";
-	}else{
-		echo "Bitte wählen Sie einen Studiengang aus.";
-	}
-
-	if(isset($_POST["pwd"])){
-		echo "Sie haben das Passwort: " . $passwort . " eingegeben.";
-	}else{
-		echo "Bitte geben Sie Ihr Passwort an.";
-	}
-
-	
-	echo "</div>";
-	echo "</div>";
-
+	/*   Fehlermeldung im oberen Bereich */
+	$bestaetigung =  "<div class='container'>
+											<div class='jumbotron'>
+											<div><h5>Vielen Dank für Ihre Anmeldung!</h5></div>
+											<div><h6>Herzlichen Dank <em>" . $vorname . " " . $nachname . " </em>aus dem Studiengang<em> " . $studiengang . "</em>!<br/>
+											Wir haben eine Bestätigung Ihrer Anmeldung an die Email-Adresse<em> " . $email . " </em>versendet.</h6><br/>
+											</div>
+											<br/ >
+											<a href='" . htmlspecialchars($_SERVER["PHP_SELF"]) . "' class='a'>Zurück</a>
+											</div>
+										</div>";
 ?>
 
+<div class='container'>
+<h2>Anmeldung</h2>
 
-		<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" role="form" class="form-horizontal">
+	<?php 
+		if ($_POST) {
+			if (empty($fehlerausgabe)) {
+					echo $bestaetigung;
+			}else{
+				echo "<div class='well well-lg'>
+							<h3>Bitte korrigieren Sie Ihre Eingaben</h3>";
+				echo "<ul class='list-group'>" . $fehlerausgabe . "</ul>";
+				echo "</div>";
+		
+	?>
+
+<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" role="form" class="form-horizontal">
+
+<?php if($vorname){ ?>
+	<div class="form-group has-success has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="vorname">Vorname :</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="text" class="form-control" name="vorname"
+				placeholder="Vorname" value= <?php echo $vorname; ?> >
+			<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+		</div>
+	</div>
+<?php }else{ ?>
+	<div class="form-group has-error has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="vorname">Vorname :</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="text" class="form-control" name="vorname"
+				placeholder="Vorname" value= <?php echo $vorname; ?> >
+			<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>	
+		</div>
+	</div>
+	<?php } ?>
+
+<?php if($nachname){ ?>
+	<div class="form-group has-success has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="nachname">Nachname :</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="text" class="form-control" name="nachname"
+				placeholder="Nachname" value= <?php echo $nachname; ?>>
+			<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+		</div>
+	</div>
+<?php }else{ ?>
+	<div class="form-group has-error has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="nachname">Nachname :</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="text" class="form-control" name="nachname"
+				placeholder="Nachname" value= <?php echo $nachname; ?>>
+			<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+		</div>
+	</div>
+<?php } ?>
+
+<?php if($email){ ?>
+	<div class="form-group has-success has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="email">Email:</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="email" class="form-control" name="email"
+				placeholder="E-Mail" value= <?php echo $email; ?>>
+				<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+		</div>
+	</div>
+<?php }else{ ?>
+	<div class="form-group has-error has-feedback">
+		<label class="control-label col-sm-2 col-md-2" for="email">Email:</label>
+		<div class="col-sm-10 col-md-6">
+			<input type="email" class="form-control" name="email"
+				placeholder="E-Mail" value= <?php echo $email; ?>>
+			<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>	
+		</div>
+	</div>
+<?php } ?>
+
+<?php if($studiengang){ ?>
+		<div class="form-group has-success has-feedback">
+			<label class="control-label col-sm-2 col-md-2" for="studiengang">Studiengang:</label>
+			<div class="col-sm-10 col-md-6">
+				<select class="form-control" name="studiengang">
+					<option value= <?php echo $studiengang; ?> > <?php echo $studiengang; ?></option>
+					<option value="FIW">Informatik und Wirtschaft</option>
+					<option value="AI">Angewandte Informatik</option>
+					<option value="WI">Wirtschaftsinformatik</option>
+					<option value="IMI">Internationale Medieninformatik</option>
+				</select>
+				<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+			</div>
+		</div>
+
+<?php }else{ ?>
+
+			<div class="form-group has-error has-feedback">
+				<label class="control-label col-sm-2 col-md-2" for="studiengang">Studiengang:</label>
+					<div class="col-sm-10 col-md-6">
+						<select class="form-control" name="studiengang">
+							<option value= <?php echo $studiengang; ?> > <?php echo $studiengang; ?></option>
+							<option value="FIW">Informatik und Wirtschaft</option>
+							<option value="AI">Angewandte Informatik</option>
+							<option value="WI">Wirtschaftsinformatik</option>
+							<option value="IMI">Internationale Medieninformatik</option>
+						</select>
+						<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+					</div>
+			</div>
+
+	<?php } ?>
+
+	<?php if($passwort){ ?>
+
+		<div class="form-group has-success has-feedback">
+			<div class="form-group">
+				<label for="pwd" class="control-label col-sm-2 col-md-2">Password:</label> 
+				<div class="col-sm-10 col-md-6">
+					<input type="password" class="form-control" name="pwd" placeholder="Passwort">
+					<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+				</div>
+		</div>
+
+		<?php }else{ ?>
+
+			<div class="form-group has-error has-feedback">
+				<div class="form-group">
+					<label for="pwd" class="control-label col-sm-2 col-md-2">Password:</label> 
+					<div class="col-sm-10 col-md-6">
+						<input type="password" class="form-control" name="pwd" placeholder="Passwort">
+						<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+				</div>
+			</div>
+
+		<?php } ?>
+
+			<div class="form-group"> 
+				<div class="col-sm-offset-2 col-sm-10 col-md-offset-2 col-md-6">
+					<button type="submit" class="btn btn-default">Anmelden</button>
+				</div>
+			</div>
+
+<?php }
+}else{
+	?>
+		
+	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post" role="form" class="form-horizontal">
 			<div class="form-group">
 				<label class="control-label col-sm-2 col-md-2" for="vorname">Vorname :</label>
 				<div class="col-sm-10 col-md-6">
-					<input type="text" class="form-control" name="vorname" placeholder="Vorname" 
-							value = "<?php if ($_POST['vorname'] != "") { echo $_POST['vorname']; } ?>">
+					<input type="text" class="form-control" name="vorname"
+						placeholder="Vorname">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 col-md-2" for="nachname">Nachname :</label>
 				<div class="col-sm-10 col-md-6">
-					<input type="text" class="form-control" name="nachname"	placeholder="Nachname"
-								value = "<?php if ($_POST['nachname'] != "") { echo $_POST['nachname']; } ?>">
+					<input type="text" class="form-control" name="nachname"
+						placeholder="Nachname">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 col-md-2" for="email">Email:</label>
 				<div class="col-sm-10 col-md-6">
-					<input type="email" class="form-control" name="email"	placeholder="E-Mail"
-								value = "<?php if ($_POST['email'] != "") { echo $_POST['email']; } ?>">
+					<input type="email" class="form-control" name="email"
+						placeholder="E-Mail">
 				</div>
 			</div>
 			<div class="form-group">
 				<label class="control-label col-sm-2 col-md-2" for="studiengang">Studiengang:</label>
 				<div class="col-sm-10 col-md-6">
-					<select class="form-control" name="studiengang" value = "<?php if ($_POST['studiengang'] != "") { echo $_POST['studiengang']; } ?>">
+					<select class="form-control" name="studiengang">
 						<option value="FIW">Informatik und Wirtschaft</option>
 						<option value="AI">Angewandte Informatik</option>
 						<option value="WI">Wirtschaftsinformatik</option>
@@ -147,7 +252,11 @@
 					<button type="submit" class="btn btn-default">Anmelden</button>
 				</div>
 			</div>
+			<?php
+		}
+		?>
+		
 		</form>
-	</div>
+		</div>
 </body>
 </html>

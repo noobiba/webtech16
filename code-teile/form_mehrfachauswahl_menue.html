@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Mehrfaches Auswahlmenü</title>
+</head>
+<body>
+
+	<h2>Mehrfaches Auswahlmenü</h2>
+	
+	<p>W&uuml;nsche Ihrer Zimmerausstattung: </p> 
+
+	<form action="multiple.php" method="post">
+		<p>
+
+		<select multiple="multiple" name="zusatzoptionen[]" > 
+			<option value="Bad" selected="selected">Bad</option> 
+			<option value="Meeresblick">Meeresblick</option> 
+			<option value="Minibar">Minibar</option> 
+		</select>
+
+		</p>
+		<p>
+
+		<input type="submit" />
+		<input type="reset" /></p>
+	</form>
+
+</body>
+</html>

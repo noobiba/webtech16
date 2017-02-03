@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Radiobutton-Gruppe</title>
+</head>
+<body>
+
+	<h2>Radiobutton-Gruppe</h2>
+	<p>
+		Bitte treffen Sie eine Auswahl <br />
+		und senden Sie das Formular ab:
+ </p> 
+
+<form action="radio.php" method="post">
+
+<h3>Reiseziel</h3>
+
+<p><input type="radio" name="rziel" value="Gomera" checked="checked"/>Gomera<br />
+<p><input type="radio" name="rziel" value="Lanzarote" />Lanzarote<br />
+<p><input type="radio" name="rziel" value="Fuerteventura" />Fuerteventura</p>
+
+
+<h3>Unterkunft</h3>
+
+<p><input type="radio" name="unterkunft" value="Ferienhaus" />Ferienhaus<br />
+<p><input type="radio" name="unterkunft" value="Hotel" checked="checked" />Hotel<br />
+
+<p><input type="submit" />
+<input type="reset" /></p>
+</form>
+
+</body>
+</html>

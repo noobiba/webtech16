@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<title>Select-Menü (Einfaches Auswahlmenü)</title>
+</head>
+<body>
+
+	<h2>Einfaches Auswahlmenü</h2> 
+
+	<p>Bitte treffen Sie eine Auswahl <br /> und senden Sie das Formular ab: </p> 
+
+
+	<form action="radio.php" method="post"> 
+		<p>
+
+		<select name="rziel">
+			<option value="Gomera" selected="selected">Gomera</option>
+			<option value="Lanzarote" >Lanzarote</option>
+			<option value="Fuerteventura" >Fuerteventura</option>
+		</select> 
+
+		Reiseziel 
+		</p>
+		<p>
+
+		<select name="unterkunft">
+			<option value="Ferienhaus" selected="selected">Ferienhaus </option>
+			<option value="Hotel" >Hotel</option>
+		</select> 
+
+		Unterkunft 
+		</p>
+		<p>
+		<input type="submit" /> 
+		<input type="reset" /></p> 
+	</form>
+
+</body>
+</html>
