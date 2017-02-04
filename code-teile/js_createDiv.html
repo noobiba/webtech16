@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body onload="createDiv()">
+
+ <h1>Ereignisse</h1>
+
+<script>
+	function changeContent(){
+		var text = document.body.lastChild.innerHTML;
+
+			if(text.length <20){
+		 		document.body.lastChild.innerHTML += ".";
+		 	}else{
+		 		document.body.lastChild.innerHTML = "Jetzt reicht es";
+		 	}
+	}
+
+
+	function createDiv(){
+
+		var newDiv = document.createElement("div");
+		var newText = document.createTextNode("Klick mich "); 
+
+		newDiv.style.backgroundColor = "blue"; 
+		newDiv.style.color = "orange"; 
+		newDiv.style.fontFamily = "Verdana"; 
+		newDiv.style.fontSize = "150%";
+		newDiv.style.height = "120px";
+		newDiv.style.width = "220px";
+		newDiv.style.padding = "40px";
+		newDiv.style.marginTop = "20px"; 
+		newDiv.setAttribute("id","div1"); 
+		newDiv.appendChild(newText); 
+		newDiv.addEventListener("click", changeContent); 
+
+		document.body.appendChild(newDiv);
+	}
+</script>
+
+</body>
+</html>

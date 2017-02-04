@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+  <script type="text/javascript">
+    function mOver(obj){
+      obj.innerHTML="Danke!";
+      obj.style.backgroundColor="green";
+      obj.style.color="black";
+      obj.style.width="200px";
+      obj.style.height="100px";
+    }
+
+    function mOut(obj){
+      obj.innerHTML="Die Maus ist hier!";
+      obj.style.backgroundColor="red";
+      obj.style.color="blue";
+      obj.style.width="400px";
+      obj.style.height="200px";
+    }
+  </script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Mausereignisse / onmouseover onmouseout</h1>
+    
+    <div><a href="../index.html">Home</a></div>
+
+
+    <div onmouseover="mOver(this)" onmouseout="mOut(this)">Maus hierher.</div>
+
+
+
+   
+</div>
+</body>
+</html>

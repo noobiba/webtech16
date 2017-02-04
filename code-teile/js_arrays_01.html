@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+ <h1>Arrays</h1>
+
+ <p></p>
+
+<div id="myDiv"></div>    <!-- Das Div muss oberhalb des Scripts liegen!! -->
+
+<script>
+
+	var cars = ["Saab","Volvo","BMW"]; 
+	var laenge = cars.length;
+
+	document.getElementById("myDiv").innerHTML += cars[0] + "<br/>"; 
+	document.getElementById("myDiv").innerHTML += laenge + "<br/>";
+
+	var neu = cars.sort(); 
+	document.getElementById("myDiv").innerHTML += neu[0]+"<br/>";
+
+</script>
+
+</body>
+</html>

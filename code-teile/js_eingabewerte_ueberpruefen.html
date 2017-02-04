@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>JavaScript Eingabewerte überprüfen</title>
+
+
+  <script type="text/javascript">
+    
+    function myFunction(){
+      var x;
+      var text;
+
+      x = document.getElementById('nummer').value;
+
+      if (isNaN(x) || x < 1 || x > 10){
+        text = "Das ist keine Zahl zwischen 1 und 10!";
+      }else{
+        text = "Die Eingabe war ok: " + x;
+      }
+      document.getElementById('result').innerHTML = text;
+    }
+
+  </script>
+
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Mit Javascript Eingabewerte überprüfen</h1>
+   
+    <div><a href="../index.html">Home</a></div>
+
+
+    <p>Bitte geben Sie eine Zahl zwischen 1 und 10 ein: </p>
+    <input type="text" name="zahl" id="nummer"/>
+
+
+    <p></p>
+
+    <button type="button" 
+            onclick="myFunction()">Senden</button>
+
+   
+      <p></p>
+
+    <div id="result"><b></b></div>
+
+    <br/>
+
+    
+   
+   
+</div>
+</body>
+</html>

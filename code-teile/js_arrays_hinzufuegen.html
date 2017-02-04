@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+ <h1>Arrays hinzufügen</h1>
+
+ <p></p>
+
+<div id="myDiv"></div>    <!-- Das Div muss oberhalb des Scripts liegen!! -->
+
+<script>
+
+	var cars = ["Saab","Volvo","BMW"];
+			cars[cars.length]="VW";
+
+document.getElementById("myDiv").innerHTML += cars[3] + "<br/>"; 
+document.getElementById("myDiv").innerHTML += cars.length + "<br/>";
+
+cars[8]="Trabi";
+document.getElementById("myDiv").innerHTML += cars[8] + "<br/>"; 
+document.getElementById("myDiv").innerHTML += cars[7] + "<br/>"; 
+document.getElementById("myDiv").innerHTML += cars.length + "<br/>";
+
+</script>
+
+</body>
+</html>
