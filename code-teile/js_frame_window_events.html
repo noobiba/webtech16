@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body onresize="myFunction()">
+
+	<h1>Ereignisse / Frame events / Beispiele</h1>
+
+	<h2>Ereignisse:<br/> <i> onload, onscroll, onresize</i></h2>
+
+	<p>Größe des Browserfensters ändern (kleiner/größer ziehen)!</p>
+	
+	<p id="demo"></p>
+
+	<script>
+		function myFunction() {
+			var w = window.outerWidth;
+			var h = window.outerHeight;
+			var txt = "Fenstergröße: Breite=" + w + ", Höhe=" + h;
+			document.getElementById("demo").innerHTML = txt;
+		}
+	</script>
+
+</body>
+</html>

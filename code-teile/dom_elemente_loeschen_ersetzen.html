@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1>DOM-Elemente - löschen</h1>
+	<div id="div1">
+		<p id="p1">Dies ist ein Absatz, der ersetzt wird.</p>
+		<p id="p2">Dies ist der zweite Absatz.</p>
+		<p id="p3">Dies ist der Absatz, der gelöscht wird.</p>
+	</div>
+
+	<script>
+		var paragraf = document.createElement("P");
+		var node = document.createTextNode("Dieser Absatz ist NEU.");
+		paragraf.appendChild(node);
+		var parent = document.getElementById("div1");
+
+		// Ersetzen von p1 durch neues p
+		var child1 = document.getElementById("p1");
+		parent.replaceChild(para,child1);
+
+		// Löschen von p3
+		var child2 = document.getElementById("p3");
+		parent.removeChild(child2);
+		// Alternative über Eigenschaft des Kindes parentNode
+		// var child2 = document.getElementById("p3");
+		// child.parentNode.removeChild(child2);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1>Ereignisse / Formular / Radio button events / Beispiele</h1>
+
+	<h2>Ereignisse:<br/> <i> onchange – ausgelöst bei Änderung eines select-Elementes oder
+der checked-Zustand hat sich geändert (input, keygen, textarea, select)</i></h2>
+
+	
+	Wähle Farbe<br>
+	<input type="radio" name="colors" value="Rot" onchange="zeigeWahl()"/>Rot<br/>
+	<input type="radio" name="colors" value="Blau" onchange="zeigeWahl()"/>Blau<br/>
+	
+	<p id="radio"></p>
+
+		<script>
+			function zeigeWahl() {
+				var x = document.getElementsByName("colors");
+				var i;
+
+				for (i = 0; i < x.length; i++) {
+
+					if (x[i].checked == true)
+					document.getElementById("radio").innerHTML = "Ausgewählt wurde: " + x[i].value;
+				}
+			}
+		</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1>DOM Manipulation / Inhalt von Element ändern</h1>
+
+	<h3>Inhalt eines Elements ändern</h3>
+
+	<p id="p1">Hallo Welt!</p>
+
+	<button onclick="changeText()">Ändere Text</button>
+
+	<script>
+
+		function changeText(){
+			document.getElementById("p1").innerHTML = "Neuer Text!";
+		}
+	</script>
+
+	<p></p>
+
+	<hr/>
+
+	<p></p>
+
+	<h3>Attribut eines Elements ändern</h3>
+	
+
+	<img id="image" src="../images/kreuz.png" />
+
+	<button onclick="swapImage()">Ändere Bild</button>
+
+	<script>
+
+		function swapImage(){
+			document.getElementById("image").setAttribute("src", "../images/ball.png");
+		}
+	</script>
+
+	<p>Das Original-Bild war kreuz.png, wurde aber geändert zu ball.png</p>
+
+</body>
+</html>

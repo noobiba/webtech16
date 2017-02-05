@@ -55,7 +55,7 @@
     <script>
        function zeigeWert(){
           var wert = document.getElementById('textfeld').value;
-          document.getElementById('inhalt').innerHTML = "Eingegeben wurde: " + wert;
+          document.getElementById('inhalt').innerHTML = "<br/> Eingegeben wurde: " + wert;
        }
     </script>
    

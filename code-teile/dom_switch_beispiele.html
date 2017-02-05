@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body onload="changeDOM()">
+
+	<h1>DOM-Elemente - hinzufügen</h1>
+
+	<script>
+		var changeDOM = (function(){
+			var anzKlicks = 0;
+
+			function change() {
+					switch (anzKlicks){
+					/*
+					* hier für jeden Klick den Code
+					*/
+
+										// Button anlegen
+										// id „btn1“ festlegen
+										// Event-Listener für click hinzufügen (ruft die Funktion selbst auf – anzKlicks wird erhöht)
+					case 0 : var btn = document.createElement("BUTTON");   
+										btn.innerHTML = "Klick mich! (AnzKlicks : " + anzKlicks + ")";
+										btn.setAttribute("id", "btn1");
+										document.body.appendChild(btn);
+										btn.addEventListener("click", changeDOM);
+										break;
+
+										// div anlegen
+										// id „div1“ festlegen, Hintergrundfarbe festlegen
+										// h1-Überschrift „Liste erstellen“ erstellt, Schriftfarbe rot festlegen
+										// Überschrift zum div hinzufügen
+										// div dem body hinzufügen
+					case 1 : var div = document.createElement("DIV");
+										div.setAttribute("id", "div1");
+										div.style.backgroundColor = "lightblue";
+										var h1 = document.createElement("H1");
+										h1.innerHTML = "Liste erstellen";
+										h1.style.color = "red";
+										div.appendChild(h1);
+										document.body.appendChild(div);
+										break;
+
+										// unordered list <ul> erstellen
+										// class „liste“ zuweisen, id „ul1“ zuweisen
+										// list item <li> „Item 1 (appendChild)“ erstellen, id „item1“ zuweisen
+										// <li> zur <ul> hinzufügen
+										// <ul> zum <div id=„div1“> hinzufügen
+					case 2 : var ul = document.createElement("UL");
+										ul.setAttribute("class", "liste");
+										ul.setAttribute("id", "ul1");
+										var li = document.createElement("LI");
+										li.innerHTML="Item 1 (appendChild)";
+										li.setAttribute("id", "item1")
+										ul.appendChild(li);
+										document.getElementById("div1").appendChild(ul);
+										break;
+
+										// weitere ul´s und li´s erstellen und anhängen
+					case 3 : var li1 = document.createElement("LI");
+										var li2 = document.createElement("LI");
+										var li3 = document.createElement("LI");
+										var ul1 = document.createElement("UL");
+										var ul2 = document.createElement("UL");
+										for (var i=1; i<4; i++)
+										{
+										var lix = document.createElement("LI");
+										lix.innerHTML = "Item 2_"+i+ " (appendChild)";
+										lix.setAttribute("id", "item2_"+i);
+										ul1.appendChild(lix);
+										}
+										for (var i=1; i<5; i++)
+										{
+										var lix = document.createElement("LI");
+										lix.innerHTML = "Item 4_"+i+ " (appendChild)";
+										lix.setAttribute("id", "item4_"+i);
+										ul2.appendChild(lix);
+										}
+										li1.innerHTML = "Item 2 (appendChild)";
+										li1.setAttribute("id","item2");
+										li1.appendChild(ul1);
+										li2.innerHTML = "Item 3 (appendChild)";
+										li1.setAttribute("id","item3");
+										li3.innerHTML = "Item 4 (appendChild)";
+										li1.setAttribute("id","item3");
+										li3.appendChild(ul2);
+										ul1.setAttribute("class", "uliste");
+										ul2.setAttribute("class", "uliste");
+										document.getElementById("ul1").appendChild(li1);
+										document.getElementById("ul1").appendChild(li2);
+										document.getElementById("ul1").appendChild(li3);
+										break;
+
+										// neues <div> mit id=„div2“ und grauem Hintergrund anlegen
+										// h1-Überschrift in rot hinzufügen
+										// Liste (Array) aller Elemente mit class=„uliste“ ermitteln und Länge ausgeben
+										// alle (2) Elemente mit class=„uliste“ betrachten und deren jeweilige Kinder
+										// ausgeben
+										// für jedes Kind id und innerHTML ausgeben
+					case 4 : var div = document.createElement("DIV");
+										div.setAttribute("id", "div2");
+										div.style.backgroundColor = "lightgrey";
+										var h1 = document.createElement("H1");
+										h1.innerHTML = "Informationen über die Liste";
+										h1.style.color = "red";
+										div.appendChild(h1);
+										var p = document.createElement("P");
+										p.setAttribute("id", "p1");
+										div.appendChild(p);
+										var ul = document.getElementsByClassName("uliste");
+										var text = document.createTextNode("Anzahl der Unterlisten mit class=\"uliste\": " + ul.length);
+										p.appendChild(text);
+										var text = "";
+										for(i=0; i<ul.length; i++)
+										{
+										text += "<hr><br/>Unterliste "+(i+1);
+										var c = ul[i].childNodes;
+										text += " hat "+c.length+" Kinder.<br/>";
+										for(j=0; j<c.length; j++)
+										{
+										text += "<br/>Kind "+(j+1)+" : ";
+										text += " id="+c[j].id+" innerHTML="+c[j].innerHTML+"<br/>";
+										}
+										}
+										div.innerHTML += text;
+										document.body.appendChild(div);
+										break;
+
+
+										// case 5 funktioniert irgendwie nicht...
+
+										// style-Element hinzufügen
+										// vor dem script-Element im head
+										// styles für body, .liste und .uliste
+					case 5 : var style = document.createElement("STYLE");
+										var text = document.createTextNode("body {font-family:Verdana;}");
+
+										//text.textContent += ".liste {font-weight:bold;}";
+										//text.textContent += ".uliste {font-weight:normal;font-style:italic}";
+										text.nodeValue += ".liste {font-weight:bold;}";
+										text.nodeValue += ".uliste {font-weight:normal;font-style:italic;}";
+										style.appendChild(text);
+										var headkids = document.head.childNodes;
+											for(i=0; i<headkids.length; i++){
+												if(headkids[i].tagName=="SCRIPT") {
+													document.head.insertBefore(style, headkids[i]);
+												}
+											}
+										break;
+
+										// die zweite Unterliste klonen (inkl. Kinder)
+										// andere Klasse zuweisen
+										// geklonte Liste in die erste Unterliste vor das dritte list item einfügen
+					case 6 : var zweiteListe = document.getElementsByClassName("uliste")[1];
+										var kopie = zweiteListe.cloneNode(true); // kids inkl.
+										kopie.setAttribute("class", "liste");
+										var ersteListe = document.getElementsByClassName("uliste")[0];
+										var drittesItemErsteListe = ersteListe.childNodes[2];
+										ersteListe.insertBefore(kopie,drittesItemErsteListe);
+										break;					
+
+					} // switch
+					anzKlicks++;
+			} // change()
+			return change;
+		} // function()
+		)();
+</script>
+		
+</body>
+</html>

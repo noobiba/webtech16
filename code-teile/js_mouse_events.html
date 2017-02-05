@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+ <h1>Ereignisse / Mouse events / Beispiele</h1>
+
+
+<h2>Ereignisse: <br/> <i>onmouseover, onmouseout, onclick</i></h2>
+<h3 onmouseover="style.color='red'" 
+		onmouseout="style.color='black'"
+		onclick="innerHTML='neue Überschrift'">alte Überschrift</h3>
+
+
+<h2>Ereignisse: <br/> <i>onmousedown, onmouseup, onmouseenter, onmouseleave</i></h2>
+<p onmousedown="innerHTML='Maus gedrückt'"
+		onmouseup="innerHTML='Maus losgelassen'"
+		onmouseenter="style.fontSize = '150%'"
+		onmouseleave="style.fontSize = '100%'">Maus klicken und später loslassen</p>
+
+
+<h2>Ereignisse:<br/> <i> ondblclick, onmouseenter</i></h2>
+<img src="../images/FB4_I_W.jpg" 
+			ondblclick="src='../images/FB4_IMI_rgb.jpg'"
+			onmouseenter="src='../images/FB4_WI_rgb.jpg'"
+			onmouseleave="src='../images/FB4_I_W.jpg'"/>
+
+
+</body>
+</html>

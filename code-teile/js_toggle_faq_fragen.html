@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+
+  <style type="text/css">
+    .unsichtbar             {display: none;}
+    .pseudo-verweis         {text-decoration: underline; cursor: pointer;}
+    .pseudo-verweis:hover   {text-decoration: none;}
+  </style>
+
+  <script>
+        function toggle_visibility(id) {
+          var e = document.getElementById(id);
+
+           if(e.style.display == 'block'){
+              e.style.display = 'none';
+           }else{
+              e.style.display = 'block';
+           }
+        }
+  </script>
+
+  <title>Webtechnologien 2016/2017</title>
+</head>
+<body>
+  <div class="wrapper">
+    <h1>Toggle / Textfelder aufklappen </h1>
+
+
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. </p>
+
+    <h2>Fragen und Antworten</h2>
+
+    <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+
+    <h3 onclick="toggle_visibility('antwort1');" class="pseudo-verweis">Frage 1</h3>
+
+    <div id="antwort1" class="unsichtbar">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </div>
+
+    <h3 onclick="toggle_visibility('antwort2');" class="pseudo-verweis">Frage 2</h3>
+
+    <div id="antwort2" class="unsichtbar">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </div>
+
+    <h3 onclick="toggle_visibility('antwort3');" class="pseudo-verweis">Frage 3</h3>
+
+    <div id="antwort3" class="unsichtbar">
+        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+
+

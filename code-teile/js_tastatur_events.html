@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+ <h1>Ereignisse / Tastatur events / Beispiele</h1>
+
+
+
+<h2>Ereignisse:<br/> <i> onkeydown, onkeypress, onkeyup</i></h2>
+<h5>onkeydown und onkeypress lösen andauernd Ereignisse aus solange eine Taste
+		gedrückt wird <br/>
+		onkeyup löst ein Ereignis aus, wenn die Taste losgelassen wird</h5>
+
+Eingabe:
+	<input type="text" id="fname" 
+		onchange="inGrossbuchstaben()"
+		onkeypress="changeP1(event)"
+		onkeyup="changeP2(event)" > 
+
+	<br/>
+			<p id="p1" style="color:red;"></p>
+			<p id="p2" style="color:green;"></p>
+
+<script>
+	function inGrossbuchstaben() {
+
+		var x = document.getElementById("fname");
+		x.value = x.value.toUpperCase();
+		}
+
+
+	function changeP1(event) {
+		event = event || window.event;
+		document.getElementById("fname").style.backgroundColor = "red";
+
+		var charCode = (event.keyCode ? event.keyCode : event.which);
+		document.getElementById("p1").innerHTML+=String.fromCharCode(charCode);
+	}
+
+	function changeP2(event) {
+		event = event || window.event;
+		document.getElementById("fname").style.backgroundColor = "green";
+
+		var charCode = (event.keyCode ? event.keyCode : event.which);
+		document.getElementById("p2").innerHTML+=String.fromCharCode(charCode);
+	}
+
+	
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1>DOM Manipulation / Style/Formatierung ändern</h1>
+
+	<p id="p1">Hallo Welt!</p>
+
+	<script>
+		document.getElementById("p1").style.color = "blue";
+	</script>
+
+	<p>Die Farbe des obigen Absatz wurde auf blau gesetzt.</p>
+
+	<h3 id="id1">Events definieren / an Element zuweisen (Klick mich!)</h3>
+
+	<script>
+		document.getElementById('id1').onclick=function()
+		{
+		document.getElementById('id1').style.color = 'yellow';
+		}
+	</script>
+
+	<p>Die Farbe der obigen Überschrift wird auf gelb gesetzt.</p>
+
+	<button type="button" 
+					onclick="document.getElementById('id1').style.color = 'red';">Klick mich!</button>
+
+	<p>Die Farbe der obigen Überschrift wird auf rot gesetzt.</p>
+
+</body>
+</html>

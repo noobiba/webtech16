@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1 id="intro">DOM-Elemente - navigieren</h1>
+
+	<p id="demo">Hallo Welt!</p>
+
+	<script>
+		var myText = document.getElementById("intro").childNodes[0].nodeValue;
+		// Aquivalent zu:
+		// var myText = document.getElementById("intro").firstChild.nodeValue;
+		document.getElementById("demo").innerHTML = myText;
+	</script>
+	
+</body>
+</html>

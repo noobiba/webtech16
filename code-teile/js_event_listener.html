@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body onload="init()">
+
+	<h1>Event Listener/ Beispiele</h1>
+
+	<form id="f1">
+		<p>
+
+		<input type="button" id="button1" value="Button 1" />
+		<input type="button" id="button2" value="Button 2" />
+		</p>
+
+	</form>
+	
+	<p>	
+	<a href="#" id="link1">Text</a>
+	</p>
+
+	<div id="ausgabe"></div>
+
+	<script>
+		function init(){
+			var btn1 = document.getElementById("button1");
+			var btn2 = document.getElementById("button2");
+			var frm1 = document.getElementById("form1");
+			var lnk1 = document.getElementById("link1");
+			var txt1 = lnk1.firstChild;
+
+			btn1.addEventListener("click", ausgabe, false);
+			btn2.addEventListener("click", ausgabe, false);
+
+			frm1.addEventListener("click", ausgabe, false);
+			frm1.addEventListener("click", ausgabe, true);
+
+			lnk1.addEventListener("click", ausgabe, false);
+			txt1.addEventListener("click", ausgabe, false);
+
+			document.addEventListener("click", ausgabe, true);
+		}
+
+		function ausgabe(evt) {
+			var output = document.getElementById("ausgabe");
+
+				if(evt.currentTarget == document) {
+					output.innerHTML += "Target : document" + "<br/>";
+				}else{
+					output.innerHTML += "Target :" + evt.currentTarget.id + "<br/>";
+				}
+		}
+
+	</script>
+</body>
+</html>

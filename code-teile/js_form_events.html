@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="../css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="../css/styles.css">
+  <title>Webtechnologien 2016/2017</title>
+
+</head>
+<body>
+
+	<h1>Ereignisse / Formular events / Beispiele</h1>
+
+	<h2>Ereignisse:<br/> <i> onchange – ausgelöst bei Änderung eines select-Elementes oder
+der checked-Zustand hat sich geändert (input, keygen, textarea, select)</i></h2>
+
+	<p>Wähle Studiengang</p>
+
+		<select id="mySelect" onchange="zeigeAuswahl()">
+
+		<option value="Informatik und Wirtschaft">Informatik und Wirtschaft</option>
+		<option value="Angewandte Informatik">Angewandte Informatik</option>
+		<option value="Internationale Medieninformatik">Internationale MI</option>
+		<option value="Wirtschaftsinformatik">Wirtschaftsinformatik</option>
+
+		</select>
+
+		<p id="demo"></p>
+
+		<script>
+			function zeigeAuswahl() {
+				var x = document.getElementById("mySelect").value;
+				document.getElementById("demo").innerHTML = "Ausgewählt wurde: " + x;
+			}
+		</script>
+
+<h2>Ereignisse:<br/> <i> onblur – Element verliert Fokus
+		<br/> onfocus – Element bekommt Fokus
+		<br/> oninput – bei Eingabe in das Feld</i></h2>
+
+	Eingabe: <input type="text" id="eingabe" 
+		onblur="inGrossbuchstaben()"
+		onfocus="hintergrundGelb(this)" 
+		oninput="wiedergabe()">
+
+		<p id="spiegel"><p>
+
+		<script>
+			function hintergrundGelb(x) {
+				x.style.background = "yellow";
+			}
+
+			function inGrossbuchstaben() {
+				var x = document.getElementById("eingabe");
+				x.value = x.value.toUpperCase();
+			}
+
+			function wiedergabe() {
+				var x = document.getElementById("eingabe").value;
+				document.getElementById("spiegel").innerHTML = "Deine Eingabe: " + x;
+			}
+		</script>
+
+</body>
+</html>
