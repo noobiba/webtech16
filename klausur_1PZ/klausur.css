@@ -1,0 +1,49 @@
+/* Normale Device-Größe */
+
+body{
+	background-color: white;
+}
+
+header{
+  background-color: #f5f5f5;
+  padding: 15px;
+  color: darkgrey;
+  font-weight: bold;
+  font-size: 25px;
+  text-align: center;
+}
+
+a,
+a:link,
+a:hover,
+a:focus{
+  text-decoration: none;
+  color: darkgrey;
+}
+
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+}
+
+.flex-item{
+}
+
+.item1{
+  flex: 1;
+}
+
+.item2{
+  flex: 1;
+}
+
+.hidden{
+  display: hidden;
+}
+
+footer{
+  background-color: #f5f5f5;
+  padding: 15px;
+  text-align: center;
+}

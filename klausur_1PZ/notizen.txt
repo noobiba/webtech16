@@ -1,0 +1,12 @@
+-bei datei laden wird url mitgeliefert.
+inhalt der datei wird in textarea reingelesen 
+formular ist original geld und kopieren und speichern (2submit buttons)
+bei auf kopieren klicken - text erschein in kopier-feld.
+in dem moment, in dem kopiere klicke, soll jedes wort ein <span> zugeordnet werden (das ist der trick)
+- dann wenn ich einen buchstaben oben eingegeben habe, bekommen die buchstaben einen gelben hintergrund (hintergrund gelb) auf tastaturereignis reagieren -> wie bei aufgabe wappen -> filter effekt
+- wenn ich oben enter (keycode13) drücke, werden worte angezeigt.  (wenn key code 13, dann werden worte unten angezeigt)
+
+- datei laden -> get 
+- beide buttons post copy und post save
+- zwei spalten layout responsive
+
