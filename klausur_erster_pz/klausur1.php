@@ -15,17 +15,40 @@
 			<div class="oben">
 				<button a href="#" class="btn btn-info btn-block">Datei laden</button>
 
+				<form> <!-- Suchfeld -->
+				  <div class="input-group">
+				    <input type="text" class="form-control" placeholder="Suche">
+				    <div class="input-group-btn">
+				      <button class="btn btn-default" type="submit">
+				        <i class="glyphicon glyphicon-search"></i>
+				      </button>
+				    </div>
+				  </div>
+				</form> <!-- Suchfeld -->
+
 				
-				Suchfeld
 			</div> <!-- class oben -->
 
 			<div class="main">
 				<div class="linkeseite">
-					Original
-					Textfeld des Originals
-					Kopieren
-					Text speichern
-					Suchbegriffe			
+					
+					<form>
+						<div class="form-group">
+						  <label for="original">Original:</label>
+						  <textarea class="form-control" rows="15" id="original"></textarea>
+						</div> <!-- formgroup original -->
+
+						<input type="submit" class="btn btn-danger" value="Kopieren">
+						<input type="submit" class="btn btn-info" value="Text speichern">
+					</form>
+
+					<p></p>
+
+					Suchbegriffe:	
+					<div id="suchbegriffe">
+						<input type="text" class="form-control" id="usr" value="Suchbegriffe">
+					</div>		
+
 				</div> <!-- class linkeseite -->
 
 				<div class="rechteseite">

@@ -17,6 +17,10 @@ a:focus{
   color: darkgrey;
 }
 
+#suchbegriffe{
+	visibility: hidden;
+}
+
 footer{
 	background: #f5f5f5;
 	padding: 15px;
