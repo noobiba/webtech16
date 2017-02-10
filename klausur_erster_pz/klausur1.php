@@ -5,11 +5,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/styles_klausur_erster_pz.css" >
 
 </head>
 <body>
 	
-		<header>WebTech Klausur</header>
+		<header>WebTech-Klausur</header>
 
 			<div class="oben">
 				Datei laden
@@ -37,7 +38,9 @@
 			</div> <!-- class oben -->
 
 
-		<footer>Tanja Cerri</footer>
+		<footer>
+			<a href="../index.html">Tanja Cerri</a>
+		</footer>
 </body>
 
 </html>
