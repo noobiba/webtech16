@@ -32,6 +32,8 @@
 			<div class="main">
 				<div class="linkeseite">
 					
+					<p></p>
+					
 					<form>
 						<div class="form-group">
 						  <label for="original">Original:</label>
@@ -44,7 +46,7 @@
 
 					<p></p>
 
-					Suchbegriffe:	
+					<label for="original">Suchbegriffe:</label>	
 					<div id="suchbegriffe">
 						<input type="text" class="form-control" id="usr" value="Suchbegriffe">
 					</div>		
@@ -52,15 +54,15 @@
 				</div> <!-- class linkeseite -->
 
 				<div class="rechteseite">
-					Kopie
-					Textfeld der Kopie	
+					
+					<label for="kopie">Kopie:</label>
+					<div class="well well-lg"></div>
+						
+
 				</div> <!-- class rechteseite -->
 			</div> <!-- class main -->
 
-			<div class="unten">
-					Datei laden
-					Suchfeld
-			</div> <!-- class oben -->
+			
 
 
 		<footer>
