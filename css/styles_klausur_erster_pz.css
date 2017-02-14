@@ -7,6 +7,14 @@ header{
 	text-align: center;
 }
 
+.wrapper{
+	margin-top: 10px;
+}
+
+.float-left{
+	float: left;
+}
+
 a,
 a:link,
 a:visited,

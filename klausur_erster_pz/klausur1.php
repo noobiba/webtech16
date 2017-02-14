@@ -12,56 +12,82 @@
 	
 		<header>WebTech-Klausur</header>
 
-			<div class="oben">
-				<button a href="#" class="btn btn-info btn-block">Datei laden</button>
+		<div class="wrapper">
+			&nbsp;
 
-				<form> <!-- Suchfeld -->
-				  <div class="input-group">
-				    <input type="text" class="form-control" placeholder="Suche">
-				    <div class="input-group-btn">
-				      <button class="btn btn-default" type="submit">
-				        <i class="glyphicon glyphicon-search"></i>
-				      </button>
-				    </div>
-				  </div>
-				</form> <!-- Suchfeld -->
+		<div class="container">
+ 		  <div class="row">
 
-				
-			</div> <!-- class oben -->
+		    <div class="col-sm-6 col-md-6 col-lg-6">
+		      <button a href="#" class="btn btn-info btn-block">Datei laden</button>
+		    </div>
 
-			<div class="main">
-				<div class="linkeseite">
-					
-					<p></p>
-					
-					<form>
+		    <div class="col-sm-6 col-md-6 col-lg-6">
+		      <form> <!-- Suchfeld -->
+					  <div class="input-group">
+					    <input type="text" class="form-control" placeholder="Suche">
+					    <div class="input-group-btn">
+					      <button class="btn btn-default" type="submit">
+					        <i class="glyphicon glyphicon-search"></i>
+					      </button>
+					    </div>
+					  </div>
+					</form> <!-- Suchfeld -->
+
+		    </div>
+		  </div>
+		</div> <!-- class container -->
+
+
+<div class="container">
+ 		  <div class="row">
+		    <div class="col-sm-6">
+		      <form>
 						<div class="form-group">
 						  <label for="original">Original:</label>
 						  <textarea class="form-control" rows="15" id="original"></textarea>
 						</div> <!-- formgroup original -->
 
-						<input type="submit" class="btn btn-danger" value="Kopieren">
-						<input type="submit" class="btn btn-info" value="Text speichern">
+						<div>
+
+						<div class="row">
+				      <div class="col-xs-3 col-sm-6 col-md-6 col-lg-4">
+				      	<input type="submit" class="btn btn-danger btn-block" value="Kopieren">
+				      </div>
+				      <div class="col-xs-9 col-sm-6 col-md-6 col-lg-8">
+				      	<input type="submit" class="btn btn-info btn-block" value="Text speichern">
+				      </div>
+					  </div>
+							
+							
+						</div>
 					</form>
 
-					<p></p>
+		    </div>
 
-					<label for="original">Suchbegriffe:</label>	
+		    <div class="col-sm-6">
+		      <label for="kopie">Kopie:</label>
+					<div class="well well-lg"></div>
+
+		    </div>
+		  </div>
+		</div>
+
+
+		<div class="container">
+ 		  <div class="row">
+		    <div class="col-sm-12">
+		      <label for="original">Suchbegriffe:</label>	
+					
 					<div id="suchbegriffe">
 						<input type="text" class="form-control" id="usr" value="Suchbegriffe">
-					</div>		
+					</div>
+		    </div>		    
+		  </div>
+		</div>
+			
 
-				</div> <!-- class linkeseite -->
-
-				<div class="rechteseite">
-					
-					<label for="kopie">Kopie:</label>
-					<div class="well well-lg"></div>
-						
-
-				</div> <!-- class rechteseite -->
-			</div> <!-- class main -->
-
+		</div> <!-- class wrapper -->
 			
 
 
