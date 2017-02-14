@@ -13,7 +13,6 @@
 		<header>WebTech-Klausur</header>
 
 		<div class="wrapper">
-			&nbsp;
 
 		<div class="container">
  		  <div class="row">
