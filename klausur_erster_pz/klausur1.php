@@ -20,6 +20,7 @@
 
 		    <div class="col-sm-6 col-md-6 col-lg-6">
 		      <button a href="#" class="btn btn-info btn-block">Datei laden</button>
+		      <br/>
 		    </div>
 
 		    <div class="col-sm-6 col-md-6 col-lg-6">
@@ -65,11 +66,10 @@
 
 		    </div>
 
-		    <div class="col-sm-6">
-		      <label for="kopie">Kopie:</label>
-					<div class="well well-lg"></div>
-
-		    </div>
+			    <div class="col-sm-6">
+			      <label for="kopie">Kopie:</label>
+						<div class="well well-lg"></div>
+					</div>
 		  </div>
 		</div>
 
