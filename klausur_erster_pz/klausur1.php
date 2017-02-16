@@ -9,7 +9,8 @@
 
 </head>
 <body>
-	
+
+		
 		<header>WebTech-Klausur</header>
 
 		<div class="wrapper">
@@ -42,20 +43,43 @@
 <div class="container">
  		  <div class="row">
 		    <div class="col-sm-6">
-		      <form>
+
+		      <form action="klausur1.php" method="post">
 						<div class="form-group">
 						  <label for="original">Original:</label>
-						  <textarea class="form-control" rows="15" id="original"></textarea>
+
+							<?php
+								function dateiAusgeben(){
+									$text = file_get_contents('./sources/text.txt');
+
+									if(dateiAusgeben($text)){ 
+						  		echo "<textarea class='form-control' rows='15' id='original'>" . dateiAusgeben($text) . "</textarea>";
+							  	}else{
+										echo "<textarea class='form-control' rows='15' id='original'>Leider kann die Datei nicht ausgegeben werden.</textarea>";
+									}
+								}
+							?>
+
+						  <?php 
+						  	if(dateiAusgeben($text)){ 
+						  		echo "<textarea class='form-control' rows='15' id='original'>" . dateiAusgeben($text) . "</textarea>";
+						  	}else{
+									echo "<textarea class='form-control' rows='15' id='original'>Leider kann die Datei nicht ausgegeben werden.</textarea>";
+								}
+						  	?>
+							
+
+
 						</div> <!-- formgroup original -->
 
 						<div>
 
 						<div class="row">
 				      <div class="col-xs-3 col-sm-6 col-md-6 col-lg-4">
-				      	<input type="submit" class="btn btn-danger btn-block" value="Kopieren">
+				      	<input type="submit" name="copy" class="btn btn-danger btn-block" value="Kopieren">
 				      </div>
 				      <div class="col-xs-9 col-sm-6 col-md-6 col-lg-8">
-				      	<input type="submit" class="btn btn-info btn-block" value="Text speichern">
+				      	<input type="submit" name="save" class="btn btn-info btn-block" value="Text speichern">
 				      </div>
 					  </div>
 							
