@@ -19,7 +19,7 @@
  		  <div class="row">
 
 		    <div class="col-sm-6 col-md-6 col-lg-6">
-		      <button a href="#" class="btn btn-info btn-block">Datei laden</button>
+		      <button a href="#" class="btn btn-info btn-block" onclick="dateiAusgeben()">Datei laden</button>
 		      <br/>
 		    </div>
 
@@ -51,22 +51,18 @@
 							<?php
 								function dateiAusgeben(){
 									$text = file_get_contents('./sources/text.txt');
-
-									if(dateiAusgeben($text)){ 
-						  		echo "<textarea class='form-control' rows='15' id='original'>" . dateiAusgeben($text) . "</textarea>";
-							  	}else{
-										echo "<textarea class='form-control' rows='15' id='original'>Leider kann die Datei nicht ausgegeben werden.</textarea>";
-									}
 								}
+							?>	
+							
+							<?php
+									if($text){ 
+						  		echo "<textarea class='form-control' rows='15' id='original'> $text </textarea>";
+							  	}else{
+										echo "<textarea class='form-control' rows='15' id='original'>$text </textarea>";
+									}
 							?>
 
-						  <?php 
-						  	if(dateiAusgeben($text)){ 
-						  		echo "<textarea class='form-control' rows='15' id='original'>" . dateiAusgeben($text) . "</textarea>";
-						  	}else{
-									echo "<textarea class='form-control' rows='15' id='original'>Leider kann die Datei nicht ausgegeben werden.</textarea>";
-								}
-						  	?>
+						  
 							
 
 
