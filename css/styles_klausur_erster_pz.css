@@ -16,6 +16,11 @@ div.row{
 	margin-bottom: 5px;
 }
 
+.whitebackground{
+	background-color: white;
+
+}
+
 a,
 a:link,
 a:visited,

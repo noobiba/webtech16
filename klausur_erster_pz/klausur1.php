@@ -10,6 +10,59 @@
 </head>
 <body>
 
+	<script>
+		function ladeDateiInhalt(){
+			$text = file_get_contents('./sources/text.txt');
+							
+			$feldinhalt = document.getElementById('original').value;
+			
+			if($feldinhalt == ""){
+				document.getElementById('original').innerHTML = $text;
+			}else{
+				document.getElementById('original').innerHTML = "";
+			}
+		}
+
+		function zeigeInhaltAn(){
+			var text = document.getElementById('original').value;
+
+			if(!isset(text)){
+				document.getElementById('original').innerHTML = "";
+			}else{
+				document.getElementById('original').innerHTML = text;
+			}
+
+		}
+
+		function schreibeInDatei(){
+				$text = fopen ("./sources/text.txt", "w");
+
+				while ( $text = fgets ($handle, 1024 ))
+						{
+						  echo $text;
+						}
+						 
+						fclose($handle);
+			}
+
+			function kopiereText(){
+				$kopierterText = filter_var($_POST['original'], FILTER_SANITIZE_STRING);
+
+				if(isset($kopierterText)){
+					document.getElementById('original').value = $kopierterText;
+					$worte = explode(" ", $text);
+					document.getElementById('original').style.background="#FFFFFF";
+
+				}else{
+					document.getElementById('original').innerHTML = 'Leider kein Text zum Kopieren vorhanden.';
+				}
+			}
+
+	</script>
+
+
+
+
 		
 		<header>WebTech-Klausur</header>
 
@@ -19,8 +72,10 @@
  		  <div class="row">
 
 		    <div class="col-sm-6 col-md-6 col-lg-6">
-		      <button a href="#" class="btn btn-info btn-block" onclick="dateiAusgeben()">Datei laden</button>
+										
+		      <button a href="klausur1.php" class="btn btn-info btn-block" onclick="ladeDateiInhalt()">Datei laden</button>
 		      <br/>
+		      
 		    </div>
 
 		    <div class="col-sm-6 col-md-6 col-lg-6">
@@ -48,23 +103,9 @@
 						<div class="form-group">
 						  <label for="original">Original:</label>
 
-							<?php
-								function dateiAusgeben(){
-									$text = file_get_contents('./sources/text.txt');
-								}
-							?>	
 							
-							<?php
-									if($text){ 
-						  		echo "<textarea class='form-control' rows='15' id='original'> $text </textarea>";
-							  	}else{
-										echo "<textarea class='form-control' rows='15' id='original'>$text </textarea>";
-									}
-							?>
-
-						  
+							<textarea class='form-control' rows='15' id='original'></textarea>
 							
-
 
 						</div> <!-- formgroup original -->
 
@@ -72,10 +113,12 @@
 
 						<div class="row">
 				      <div class="col-xs-3 col-sm-6 col-md-6 col-lg-4">
-				      	<input type="submit" name="copy" class="btn btn-danger btn-block" value="Kopieren">
+				      	<input type="submit" name="copy" class="btn btn-danger btn-block" 
+				      		value="Kopieren" onclick="kopiereText()">
 				      </div>
 				      <div class="col-xs-9 col-sm-6 col-md-6 col-lg-8">
-				      	<input type="submit" name="save" class="btn btn-info btn-block" value="Text speichern">
+				      	<input type="submit" name="save" class="btn btn-info btn-block" 
+				      		value="Text speichern" onclick="schreibeInDatei();">
 				      </div>
 					  </div>
 							
